@@ -11,6 +11,17 @@ public class Student extends Person{
         }
     }
 
+    public double getAvg(){
+        double result = 0;
+        int count = 0;
+        for (Grade grade : grades) {
+            result += grade.getScore();
+            count++;
+        }
+        return result / count;
+    }
+
+
     public Grade[] getGrades() {
         return grades;
     }

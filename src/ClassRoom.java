@@ -34,6 +34,31 @@ public class ClassRoom {
         return students;
     }
 
+    public void classProfessionAvg(){
+        double result = 0;
+        int count = 0;
+        for (int i = 0; i < Profession.values().length; i++) {
+            System.out.println(Profession.values()[i] + " and the school average of it is:");
+            for (Student student : this.students) {
+                result += student.getGrades()[i].getScore();
+                count++;
+            }
+            System.out.print(result / count + '\n');
+            result = 0;
+            count = 0;
+        }
+    }
+
+    public double getAvg(){
+        double result = 0;
+        int count = 0;
+        for (Student student : this.students) {
+            result += student.getAvg();
+            count++;
+        }
+        return result / count;
+    }
+
     public void setStudents(Student[] students) {
         this.students = students;
     }
